@@ -1,33 +1,23 @@
 <%- include partials/header.ejs %>
+<head>
+   <link rel = "stylesheet" href = "TokenGraphAdsApp/public/stylesheets/aboutstyles.css">
+ </head> 
 
-<!DOCTYPE html>
-        <html>
-           <head>
-              <title>OSM and Leaflet</title>
-              <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-           </head><body>
-              <div id = "map" style = "width: 900px; height: 580px"></div><script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-              <script>
-                 // Creating map options
-                 var mapOptions = {
-                    center: [17.385044, 78.486671],
-                    zoom: 10
-                 }
-                 
-                 // Creating a map object
-                 var map = new L.map('map', mapOptions);
-                 
-                 // Creating a Layer object
-                 var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-                 
-                 // Adding layer to the map
-                 map.addLayer(layer);
-              </script>
-           </body>
-           
-        </html>
+<section class = "about" class = "py-5">
+   <div class = "container" style="margin-bottom: 80px;">
+       <div class = "row gy-lg-5 align-items-center">
+           <div class = "col-lg-6 order-lg-1 text-center text-lg-start">
+               <div class = "title pt-3 pb-5">
+                   <h2 class = "position-relative d-inline-block ms-4">About Us</h2>
+               </div>
+               <p class = "lead text-muted">We offer our clientele a wide variety of Graphical Advertisements.</p>
+               <p>Surfing the global market for your preferred graphical advertisement can be an ordeal. Now, look no further than Token Graph Ads, which offers seamless transactions for your top-notch graphical advertisements.</p>
+           </div>
+           <div class = "col-lg-6 order-lg-0">
+               <img src = "/TokenGraphAdsApp/public/images/aboutus.jpg" alt = "" class = "img-fluid">
+           </div>
+       </div>
+   </div>
+ </section> 
 
-
-
-
-        
+<%- include partials/footer.ejs %>
