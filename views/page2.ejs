@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div class="readArea"> <!-- READING FROM CONTRACT -->
+    <div class="readArea" style="margin-bottom: 100px;"> <!-- READING FROM CONTRACT -->
         <button onclick="connectMetamask()">CONNECT TO METAMASK</button>
         <p id="userArea">Status: Not connected to Metamask</p>
          <!-- index html to meta-->
@@ -24,10 +24,7 @@
         <p id="balanceArea">Balance: Not Connected to Contract</p>
         <!-- CAlling the function designed in Transactions.sol get balance -->
 
-        
-    </div>
-
-    <div class="writeArea"><!-- WRITING TO CONTRACT -->
+    <!-- WRITING TO CONTRACT -->
         <button onclick="depositContract()">Send ether to the Contract</button><br>
         <input type="number" id="depositInput" placeholder="Enter Amount"><br> <br>
           <!-- Deposit to contract calling on deposit function -->
@@ -38,7 +35,6 @@
                 <!-- CAlling the function designed in Transactions.sol -->
         <!-- calling the withdraw function -->
     </div>
-
     <script> // the below script code is convention in web3 in forming the communication with Web
 
         let account;
