@@ -22,4 +22,8 @@ router.get('/page3', function(req, res, next) {
   res.render('page3', { title: 'Welcome to Token Graph Ads', name:null });
 });
 
+router.get('/page4', function(req, res, next) {
+  res.render('page4', { title: 'Welcome to Token Graph Ads', name:null });
+});
+
 module.exports = router;
