@@ -11,113 +11,26 @@
         </div>
       </div>
 
-      <div class = "special-list row g-0">
-          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-              <div class = "special-img position-relative overflow-hidden">
-                  <img src = "/TokenGraphAdsApp/public/images/cityscape.jpg" class = "w-100" style="height: 400px;">
-                  <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                  </span>
-              </div>
-              <div class = "text-center">
-                  <p class = "text-capitalize mt-3 mb-1">City Scape</p>
-                  <span class = "fw-bold d-block">1 ETH</span>
-                  <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-              </div>
-          </div>
-
-          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-              <div class = "special-img position-relative overflow-hidden">
-                  <img src = "/TokenGraphAdsApp/public/images/night.jpg" class = "w-100" style="height: 400px;">
-                  <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                  </span>
-              </div>
-              <div class = "text-center">
-                  <p class = "text-capitalize mt-3 mb-1">Night</p>
-                  <span class = "fw-bold d-block">1 ETH</span>
-                  <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-              </div>
-          </div>
-
-          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-              <div class = "special-img position-relative overflow-hidden">
-                  <img src = "/TokenGraphAdsApp/public/images/burger.jpg" class = "w-100" style="height: 400px;">
-                  <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                  </span>
-              </div>
-              <div class = "text-center">
-                  <p class = "text-capitalize mt-3 mb-1">Burgers</p>
-                  <span class = "fw-bold d-block">1 ETH</span>
-                  <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-              </div>
-          </div>
-
-          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-              <div class = "special-img position-relative overflow-hidden">
-                  <img src = "/TokenGraphAdsApp/public/images/muddybites.jpg" class = "w-100" style="height: 400px;">
-                  <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                  </span>
-              </div>
-              <div class = "text-center">
-                  <p class = "text-capitalize mt-3 mb-1">Muddy Bites</p>
-                  <span class = "fw-bold d-block">1 ETH</span>
-                  <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-              </div>
-          </div>
-
-          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+      <div class="row">
+        <% ads.forEach(function(ad, index) { %>
+          <% if (index % 4 === 0) { %>
+            </div><div class="row"> 
+          <% } %>
+          <div class="col-md-6 col-lg-3 col-xl-3 p-2">
             <div class = "special-img position-relative overflow-hidden">
-                <img src = "/TokenGraphAdsApp/public/images/bus.jpg" class = "w-100" style="height: 400px;">
-                <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                </span>
+              <img src="<%= ad.imagePath %>" class="card-img-top" style="height: 400px;" alt="Image">
+              <div class="card-body">
+                <h5 class="card-title"><%= ad.title %></h5>
+                <p class="card-text"><%= ad.description %></p>
+                <p class="card-text"><%= ad.price %></p>
+                <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+              </div>
             </div>
-            <div class = "text-center">
-                <p class = "text-capitalize mt-3 mb-1">Bus Rush</p>
-                <span class = "fw-bold d-block">1 ETH</span>
-                <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-            </div>
-        </div>
-
-        <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-          <div class = "special-img position-relative overflow-hidden">
-              <img src = "/TokenGraphAdsApp/public/images/london.jpg" class = "w-100" style="height: 400px;">
-              <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-              </span>
           </div>
-          <div class = "text-center">
-              <p class = "text-capitalize mt-3 mb-1">London</p>
-              <span class = "fw-bold d-block">1 ETH</span>
-              <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-          </div>
+        <% }); %>
       </div>
-
-      <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-        <div class = "special-img position-relative overflow-hidden">
-            <img src = "/TokenGraphAdsApp/public/images/car.jpg" class = "w-100" style="height: 400px;">
-            <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-            </span>
-        </div>
-        <div class = "text-center">
-            <p class = "text-capitalize mt-3 mb-1">Snow Car</p>
-            <span class = "fw-bold d-block">1 ETH</span>
-            <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-        </div>
     </div>
 
-    <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-      <div class = "special-img position-relative overflow-hidden">
-          <img src = "/TokenGraphAdsApp/public/images/coffee.jpg" class = "w-100" style="height: 400px;">
-          <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-          </span>
-      </div>
-      <div class = "text-center">
-          <p class = "text-capitalize mt-3 mb-1">Fancy Coffee?</p>
-          <span class = "fw-bold d-block">1 ETH</span>
-          <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-      </div>
-  </div>
-
-      </div>
-  </div>
 </section>
 
 <%- include partials/footer.ejs %>
