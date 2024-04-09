@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Ad = require('../models/ad');
+router.use(express.static(__dirname));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
