@@ -26,7 +26,7 @@ router.get('/page1', function(req, res, next) {
       for(var i = 0; i < docs.length; i += chunkSize) {
           AdChunks.push(docs.slice(i, i + chunkSize));
       }
-      res.render('page1', { title: 'Collection', ads: docs });
+      res.render('page1', { title: 'Collection', ads: docs, session: req.session });
   });
 });
 
@@ -44,6 +44,14 @@ router.get('/add-to-cart/:id', function(req, res, next){
     console.log(req.session.cart);
     res.redirect('/page1');
   });
+});
+
+router.get('/shopping-cart', function(req, res, next) {
+  if (!req.session.cart) {
+      return res.render('shopping-cart', { session: req.session, ads: null });
+  }
+  var cart = new Cart(req.session.cart);
+  res.render('shopping-cart', { session: req.session, ads: cart.generateArray(), totalPrice: cart.totalPrice });
 });
 
 router.get('/page2', function(req, res, next) {

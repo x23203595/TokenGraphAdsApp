@@ -1,0 +1,89 @@
+<%- include partials/header.ejs %>
+<head>
+    <link rel="stylesheet" href="TokenGraphAdsApp/public/stylesheets/shoppingcartgraphadstyles.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+    <div class="container">
+        
+        <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="">
+            <img src="TokenGraphAdsApp/public/images/shopping-bag-icon.png" alt="site icon">
+            <span class="text-uppercase fw-lighter ms-2">Token Graph Ads</span>
+        </a>
+
+        <button class = "navbar-toggler border-0" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navMenu">
+            <span class = "navbar-toggler-icon"></span>
+        </button>
+
+        <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
+            <ul class = "navbar-nav mx-auto text-center">
+                <li class = "nav-item px-2 py-2">
+                    <a class = "nav-link text-uppercase text-dark" href = "/page3">About Us</a>
+                </li>
+                <li class = "nav-item px-2 py-2">
+                    <a href="/shopping-cart" class="btn position-relative">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Shopping Cart
+                        <span class="badge"><%= session.cart.totalQty %></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+</nav>
+
+
+<section id="special" class="py-5">
+    <div class="container">
+        <div class="title text-center py-5">
+            <div class="shoppingcartheading">
+                <h2 class="position-relative d-inline-block">Shopping Cart</h2>
+            </div>
+        </div>
+
+        <% if (ads && ads.length > 0) { %>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <ul class="list-group">
+                    <% ads.forEach(function(item) { %>
+                    <li class="list-group-item">
+                        <span class="badge"><%= item.qty %></span>
+                        <strong><%= item.ad.title %></strong>
+                        <span class="label label-success"><%= item.price %> ETH</span>
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Reduce by 1</a></li>
+                                <li><a href="#">Remove All</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <strong>Total: <%= totalPrice %> </strong>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <button type="button" class="btn btn-success">Checkout</button>
+            </div>
+        </div>
+
+        <% } else { %>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <h2>No Items in Cart</h2>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</section>
+
+<script src="metamask.js"></script>
