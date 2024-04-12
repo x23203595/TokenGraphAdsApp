@@ -9,7 +9,6 @@ var adSchema = new Schema({
     order: { type: Number, required: true }
 });
 
-// Function to update the order field of ads
 adSchema.statics.updateOrderField = function () {
     return this.find({}).sort({ order: 1 }).exec()
         .then(ads => {
@@ -23,8 +22,6 @@ adSchema.statics.updateOrderField = function () {
         });
 };
 
-// Define the model using the schema
 var Ad = mongoose.model('Ad', adSchema);
 
-// Export the model
 module.exports = Ad;

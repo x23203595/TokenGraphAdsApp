@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
 var session = require('express-session');
+var passport = require('passport');
+var flash = require('connect-flash');
+var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 
 var indexRouter = require('./routes/index');
@@ -12,7 +14,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/GraphAds');
+mongoose.connect('mongodb://localhost:27017/GraphAds', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,13 +28,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(session({
   secret: 'GraphAdSecret',
-  resave: true, 
-  saveUninitialized: false, 
+  resave: true,
+  saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  cookie: { maxAge: 180 * 180 * 5000 }
+  cookie: { maxAge: 180 * 60 * 1000 } // Corrected maxAge value
 }));
+
+app.use(flash());
+
+// Initialize Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -51,15 +64,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/page2.ejs"));
-})
-
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
 module.exports = app;
-
-app.use('/TokenGraphAdsApp/public', express.static(path.join(__dirname, 'public')));

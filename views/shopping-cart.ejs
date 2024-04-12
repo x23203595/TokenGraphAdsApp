@@ -1,13 +1,15 @@
 <%- include partials/header.ejs %>
 <head>
     <link rel="stylesheet" href="TokenGraphAdsApp/public/stylesheets/shoppingcartgraphadstyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
     <div class="container">
         
         <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="">
-            <img src="TokenGraphAdsApp/public/images/shopping-bag-icon.png" alt="site icon">
+            <img src="/images/shopping-bag-icon.png" alt="site icon">
             <span class="text-uppercase fw-lighter ms-2">Token Graph Ads</span>
         </a>
 
@@ -28,10 +30,8 @@
                 </li>
             </ul>
         </div>
-
         </div>
 </nav>
-
 
 <section id="special" class="py-5">
     <div class="container">
@@ -42,47 +42,44 @@
         </div>
 
         <% if (ads && ads.length > 0) { %>
-        <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <ul class="list-group">
-                    <% ads.forEach(function(item) { %>
-                    <li class="list-group-item">
-                        <span class="badge"><%= item.qty %></span>
-                        <strong><%= item.ad.title %></strong>
-                        <span class="label label-success"><%= item.price %> ETH</span>
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Reduce by 1</a></li>
-                                <li><a href="#">Remove All</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <% }); %>
-                </ul>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <ul class="list-group">
+                        <% ads.forEach(function(item) { %>
+                        <li class="list-group-item">
+                            <span class="badge"><%= item.qty %></span>
+                            <strong><%= item.ad.title %></strong>
+                            <div class = "special-img position-relative overflow-hidden">
+                                <img src="<%= item.ad.imagePath %>" alt="<%= item.ad.title %> Image" class="card-img-top" style="width: 300px; height: 200px;">
+                            <span class="label label-success"><%= item.price %> ETH</span>
+                            </div>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <strong>Total: <%= totalPrice %> </strong>
+            
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <strong>Total: <%= totalPrice %> </strong>
+                </div>
             </div>
-        </div>
-        <hr>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <button type="button" class="btn btn-success">Checkout</button>
+            <hr>
+            
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <button type="button" class="btn btn-success">Checkout</button>
+                </div>
             </div>
-        </div>
-
-        <% } else { %>
-        <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <h2>No Items in Cart</h2>
+            
+            <% } else { %>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <h2>No Items in Cart</h2>
+                </div>
             </div>
-        </div>
-        <% } %>
+            <% } %>
+                                
     </div>
 </section>
 

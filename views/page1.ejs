@@ -1,64 +1,79 @@
 <%- include partials/header.ejs %>
 <head>
-  <link rel = "stylesheet" href = "TokenGraphAdsApp/public/stylesheets/collectionstyles.css">
+  <link rel="stylesheet" href="/stylesheets/collectionstyles.css">
 </head>
 
-<nav class = "navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
-  <div class = "container">
-      <a class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0" href = "">
-          <img src = "TokenGraphAdsApp/public/images/shopping-bag-icon.png" alt = "site icon">
-          <span class = "text-uppercase fw-lighter ms-2">Token Graph Ads</span>
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="">
+      <img src="/images/shopping-bag-icon.png" alt="site icon">
+      <span class="text-uppercase fw-lighter ms-2">Token Graph Ads</span>
+    </a>
+
+    <div class="order-lg-2 nav-btns">
+      <a href="/shopping-cart" class="btn position-relative">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>Shopping Cart
+          <% if (session && session.cart && session.cart.totalQty) { %>
+              <span class="badge"><%= session.cart.totalQty %></span>
+          <% } else { %>
+              <span class="badge">0</span>
+          <% } %>
+          <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
       </a>
-
-      <div class = "order-lg-2 nav-btns">
-          <a href = "/shopping-cart" class = "btn position-relative">
-              <i class = "fa fa-shopping-cart" aria-hidden="true"></i>Shopping Cart
-              <span class = "badge"><%= session.cart.totalQty %></span>
-              <span class = "position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
-          </a>
-      </div>
-
-      <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
-        <ul class = "navbar-nav mx-auto text-center">
-            <li class = "nav-item px-2 py-2">
-                <a class = "nav-link text-uppercase text-dark" href = "/index">Home</a>
-            </li>
-            <li class = "nav-item px-2 py-2">
-                <a class = "nav-link text-uppercase text-dark" href = "/page3">About Us</a>
-            </li>
-        </ul>
+      <button class="btn mt-3 btn-primary text-uppercase" onclick="connectMetamask()">metamask address</button>
+        <p id="userArea"></p>
+        <script>let account;
+          const connectMetamask = async () => {
+              if(window.ethereum !== "undefined") {
+                  const accounts = await ethereum.request({method: "eth_requestAccounts"});
+                  account = accounts[0];
+                  document.getElementById("userArea").innerHTML = `${account}`;
+              }
+          }
+        </script>
+  </div>
+    
+    <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item px-2 py-2">
+          <a class="nav-link text-uppercase text-dark" href="/index">Home</a>
+        </li>
+        <li class="nav-item px-2 py-2">
+          <a class="nav-link text-uppercase text-dark" href="/page3">About Us</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 
-<section id = "special" class = "py-5">
-  <div class = "container">
-      <div class = "title text-center py-5">
-        <div class = "collectionheading">
-          <h2 class = "position-relative d-inline-block">Selection</h2>
-        </div>
-      </div>
-
-      <div class="row">
-        <% ads.forEach(function(ad, index) { %>
-          <% if (index % 4 === 0) { %>
-            </div><div class="row"> 
-          <% } %>
-          <div class="col-md-6 col-lg-3 col-xl-3 p-2">
-            <div class = "special-img position-relative overflow-hidden">
-              <img src="<%= ad.imagePath %>" class="card-img-top" style="height: 400px;" alt="Image">
-              <div class="card-body">
-                <h5 class="card-title"><%= ad.title %></h5>
-                <p class="card-text"><%= ad.description %></p>
-                <p class="card-text"><%= ad.price %></p>
-                <a href="/add-to-cart/<%= ad._id %>" class="btn btn-primary mt-3">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        <% }); %>
+<section id="special" class="py-5">
+  <div class="container">
+    <div class="title text-center py-5">
+      <div class="collectionheading">
+        <h2 class="position-relative d-inline-block">Selection</h2>
       </div>
     </div>
 
+    <div class="row">
+      <% ads.forEach(function(ad, index) { %>
+        <% if (index % 4 === 0) { %>
+          </div><div class="row">
+        <% } %>
+        <div class="col-md-6 col-lg-3 col-xl-3 p-2">
+          <div class="special-img position-relative overflow-hidden">
+            <img src="<%= ad.imagePath %>" class="card-img-top" style="height: 400px;">
+            <div class="card-body">
+              <h5 class="card-title"><%= ad.title %></h5>
+              <p class="card-text"><%= ad.description %></p>
+              <p class="card-text"><%= ad.price %></p>
+              <a href="/add-to-cart/<%= ad._id %>" class="btn btn-primary mt-3">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+
+  </div>
 </section>
 
 <%- include partials/footer.ejs %>
