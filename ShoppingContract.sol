@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.6.6; 
+pragma solidity ^0.8.25; 
   
  interface ERC20Interface { 
    function totalSupply() external view returns (uint256); 
@@ -25,12 +25,12 @@ contract myToken is ERC20Interface {
 	mapping(address => uint) private _balances; 
 	mapping(address => mapping(address => uint256)) private _allowances; 
  
-	constructor() public { 
+	constructor() { 
 	 tokenOwner = msg.sender; 
 	 symbol="TOK"; 
-	 name="Fixed supply token"; 
-	 decimals=10; 
-	 _totalSupply = 10
+	 name="TokenGraphAdsContract"; 
+	 decimals=0; 
+	 _totalSupply = 10; 
 	 _balances[tokenOwner] = _totalSupply; 
 	 emit Transfer(address(0), tokenOwner, _totalSupply); 
 	} 

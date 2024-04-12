@@ -1,0 +1,37 @@
+.checkoutheading {
+    padding-top: 50px;
+}
+
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.py-5 {
+    padding-bottom: 10px; 
+}

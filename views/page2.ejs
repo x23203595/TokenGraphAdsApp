@@ -2,133 +2,104 @@
 
 <head>
     <title>TokenGraphAdsApp</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>   
     <link rel = "stylesheet" href = "/stylesheets/frontendconnstyles.css">
 </head>
-<body>
+<section class = "smartcontractheading" class = "py-5">
+    <div class = "container" style="margin-bottom: 80px;">
+        <div class = "row gy-lg-5 align-items-center">
+            <div class = "col-lg-6 order-lg-1 text-center text-lg-start">
+                <div class = "title pt-3 pb-5">
+                    <h2 class = "position-relative d-inline-block ms-4">Smart Contract</h2>
+                </div>
+                <p class = "lead text-muted">ERC20</p>
+                <p><h6>// SPDX-License-Identifier: GPL-3.0
 
-    <div class="readArea" style="margin-bottom: 100px;"> <!-- READING FROM CONTRACT -->
-        <button onclick="connectMetamask()">CONNECT TO METAMASK</button>
-        <p id="userArea">Status: Not connected to Metamask</p>
-         <!-- index html to meta-->
-
-        <button onclick="connectContract()">CONNECT TO CONTRACT</button>
-        <p id="contractArea">Status: Not connected to Contract</p>
-        <!-- meta to SC -->
-
-        <button onclick="getContractAccount()"> GET CONTRACT ACCOUNT </button>
-        <p id="contractAccount">Contract Account: Not Connected to Contract</p>
-        <!-- CAlling the function designed in Transactions.sol get deployment addresss -->
-
-        <button onclick="getBalanceApple()">GET BALANCE OF THE CONTRACT</button>
-        <p id="balanceArea">Balance: Not Connected to Contract</p>
-        <!-- CAlling the function designed in Transactions.sol get balance -->
-
-    <!-- WRITING TO CONTRACT -->
-        <button onclick="depositContract()">Send ether to the Contract</button><br>
-        <input type="number" id="depositInput" placeholder="Enter Amount"><br> <br>
-          <!-- Deposit to contract calling on deposit function -->
-
-        <button onclick="withdraw()">WITHDRAW ETHER TO ANY ADDRESS</button> <br>
-        <input type="text" id="addressInput" placeholder="Enter Address"> <br>
-        <input type="number" id="amountInput" placeholder="Enter Amount"> 
-                <!-- CAlling the function designed in Transactions.sol -->
-        <!-- calling the withdraw function -->
+                    pragma solidity ^0.8.25; 
+                      
+                     interface ERC20Interface { 
+                       function totalSupply() external view returns (uint256); 
+                       function balanceOf(address account) external view returns (uint256); 
+                       function allowance(address owner, address spender) external view returns (uint256); 
+                       function transfer(address recipient, uint256 amount) external returns (bool); 
+                       function approve(address spender, uint256 amount) external returns (bool); 
+                       function transferFrom(address sender, address recipient, uint256 amount) external returns (bool); 
+                     
+                      event Transfer(address indexed from, address indexed to, uint256 value); 
+                      event Approval(address indexed owner, address indexed spender, uint256 value); 
+                    } 
+                     
+                    contract myToken is ERC20Interface { 
+                     
+                        string public symbol; 
+                        string public name; 
+                        uint8 public decimals; 
+                        uint public _totalSupply; 
+                        address public tokenOwner; 
+                     
+                        mapping(address => uint) private _balances; 
+                        mapping(address => mapping(address => uint256)) private _allowances; 
+                     
+                        constructor() { 
+                         tokenOwner = msg.sender; 
+                         symbol="TOK"; 
+                         name="TokenGraphAdsContract"; 
+                         decimals=0; 
+                         _totalSupply = 10; 
+                         _balances[tokenOwner] = _totalSupply; 
+                         emit Transfer(address(0), tokenOwner, _totalSupply); 
+                        } 
+                     
+                        function totalSupply() public view override returns (uint256) { 
+                         return _totalSupply - _balances[address(0)]; 
+                        } 
+                         
+                        function balanceOf(address account) public view override returns (uint256) { 
+                         return _balances[account]; 
+                        } 
+                     
+                        function allowance(address owner, address spender) public view virtual override returns 
+                        (uint256) { 
+                         return _allowances[owner][spender]; 
+                        } 
+                     
+                        function transfer(address recipient, uint256 amount) public virtual override returns (bool) 
+                        { 
+                         address sender = msg.sender; 
+                         
+                         _balances[sender] = _balances[sender] - amount; 
+                         _balances[recipient] = _balances[recipient] + amount; 
+                         emit Transfer(sender, recipient, amount); 
+                         return true; 
+                        } 
+                     
+                        function approve(address spender, uint256 amount) public virtual override returns (bool) { 
+                    
+                        address sender = msg.sender; 
+                         
+                         _allowances[sender][spender] = amount; 
+                         emit Approval(sender, spender, amount); 
+                         return true; 
+                        } 
+                     
+                        function transferFrom(address sender, address recipient, uint256 amount) public virtual 
+                    override returns (bool) { 
+                     
+                         _balances[sender] = _balances[sender] - amount; 
+                         _balances[recipient] = _balances[recipient] + amount; 
+                         emit Transfer(sender, recipient, amount); 
+                         
+                         _allowances[sender][recipient] = amount; 
+                         emit Approval(sender, recipient, amount); 
+                         return true; 
+                        } 
+                    } 
+                </h6></p>
+            </div>
+            <div class = "col-lg-6 order-lg-0">
+                <img src = "/images/ethereum.jpg" alt = "" class = "img-fluid">
+            </div>
+        </div>
     </div>
-    <script> // the below script code is convention in web3 in forming the communication with Web
-
-        let account;
-        const connectMetamask = async () => {
-            if(window.ethereum !== "undefined") {
-                const accounts = await ethereum.request({method: "eth_requestAccounts"});
-                account = accounts[0];
-                document.getElementById("userArea").innerHTML = `User Account: ${account}`;
-            }
-        }
-
-        const connectContract = async () => {
-            const ABI = [
-            {
-                "inputs": [],
-                "name": "deposit",
-                "outputs": [],
-                "stateMutability": "payable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address payable",
-                        "name": "_to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "_amount",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "withdraw",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "getAddress",
-                "outputs": [
-                    {
-                        "internalType": "address",
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "getBalance",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            }
-        ];
-            const Address = "0x60b305da3df35965c97256d13073dd4ef5ac8e41"; // Taking Address from Remix 
-            window.web3 = await new Web3(window.ethereum);
-            window.contract = await new window.web3.eth.Contract(ABI, Address);
-            document.getElementById("contractArea").innerHTML = "Connected to Contract"; // calling the elementID above
-        }
-
-        const getContractAccount = async () => {
-            const data = await window.contract.methods.getAddress().call();
-            document.getElementById("contractAccount").innerHTML = `Contract Account: ${data}`;
-        }
-
-        const getBalanceApple = async () => { // const getBalanceApple is the HTML function & .contract.getBalance is the smart contract function
-            const data = await window.contract.methods.getBalance().call();
-            document.getElementById("balanceArea").innerHTML = `Contract Balance: ${data}`;
-        }
-
-        const depositContract = async () => {
-            const amount = document.getElementById("depositInput").value;
-            await window.contract.methods.deposit().send({from: account, value: amount});
-        }
-
-        const withdraw = async () => {
-            const amount = document.getElementById("amountInput").value;
-            const address = document.getElementById("addressInput").value;
-            await window.contract.methods.withdraw(address, amount).send({from: account});
-        }
-
-    </script>
-   
-</body>
-
-<%- include partials/footer.ejs %>
+  </section> 
+ 
+ <%- include partials/footer.ejs %>

@@ -6,3 +6,24 @@
     width: auto; 
     height: auto; 
 }
+.image-container {
+    height: 200px; 
+    overflow: hidden;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instructions {
+    margin-top: 110px; 
+}
+
+.title {
+    margin-top: 1px;
+}
+
+.special-img .image-container img {
+    width: 100%;
+}

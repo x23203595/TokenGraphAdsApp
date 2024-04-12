@@ -64,6 +64,14 @@ router.get('/shopping-cart', function(req, res, next) {
   res.render('shopping-cart', { session: req.session, ads: cart.generateArray(), totalPrice: cart.totalPrice });
 });
 
+router.get('/checkout', function(req, res, next) {
+  if (!req.session.cart) {
+    return res.redirect('/shopping-cart');
+  }
+  var cart = new Cart(req.session.cart);
+  res.render('checkout', { total: cart.totalPrice });
+});
+
 router.get('/page2', function(req, res, next) {
   res.render('page2', { title: 'Welcome to Token Graph Ads', name: null });
 });
