@@ -12,6 +12,8 @@ var MongoStore = require('connect-mongo')(session);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+mongoose.set('strictQuery', true);
+
 var app = express();
 
 mongoose.connect('mongodb://localhost:27017/GraphAds', {
