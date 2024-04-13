@@ -16,7 +16,9 @@ mongoose.set('strictQuery', true);
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/GraphAds', {
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/GraphAds';
+
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

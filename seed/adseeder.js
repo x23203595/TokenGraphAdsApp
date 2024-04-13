@@ -8,7 +8,7 @@ var ads = [
         imagePath: '/TokenGraphAdsApp/public/images/cityscape.jpg',
         title: 'City Scape',
         description: 'City',
-        price: 0.3,
+        price: 0.4,
         order: 1
     },
     {
