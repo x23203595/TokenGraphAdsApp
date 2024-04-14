@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-14T13:56:11.361Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="ukt2aCEbW1exQG0aF3Le" version="24.2.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-14T14:54:05.390Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="-O_7Xuk2TrV23UC58nW_" version="24.2.5" type="github">
   <diagram name="Page-1" id="ndW4kyAIttWVdL_zS6OP">
     <mxGraphModel dx="1050" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="66" y="160" width="67.5" height="93" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-2" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#8CC64F;gradientColor=none;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="18.5" y="320" width="43.5" height="50" as="geometry" />
+          <mxGeometry x="31" y="434" width="32" height="40" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
@@ -23,25 +23,85 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-6" value="AWS Elastic Beanstalk" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="120" y="230" width="60" height="30" as="geometry" />
+          <mxGeometry x="17" y="240" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-7" value="&#39;TokenGraphAdsApp&#39;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="70.5" y="55" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontFamily=Times New Roman;fontSize=11;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="79" y="319" width="70" height="45" as="geometry" />
+          <mxGeometry x="86" y="456" width="61" height="41" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-10" value="Express.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontFamily=Times New Roman;fontSize=12;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="84" y="327" width="60" height="30" as="geometry" />
+          <mxGeometry x="94" y="464" width="46" height="23" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-11" value="Node.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="12" y="368" width="60" height="30" as="geometry" />
+          <mxGeometry x="17" y="482" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="wR3p1nMsVGDt6p0DbT6x-12" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontStyle=1" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="99.25" y="310" as="sourcePoint" />
+            <mxPoint x="100" y="400" as="sourcePoint" />
             <mxPoint x="99.5" y="260" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-13" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#205E00;gradientColor=none;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="431" y="41" width="33.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-14" value="&lt;font&gt;&lt;span&gt;JavaScript&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="418.75" y="81" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-15" value="Platform" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="14" y="398" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-16" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.html5;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="325" y="40" width="36" height="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-18" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#8CC64F;gradientColor=none;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="41" width="32" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-19" value="Node.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="491" y="86" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontFamily=Times New Roman;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="561" y="40" width="61" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-21" value="Express.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontFamily=Times New Roman;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="569" y="48" width="46" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-22" value="Languages" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="418.75" y="9" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-24" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Times New Roman;fontStyle=1" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239" y="480" as="sourcePoint" />
+            <mxPoint x="240" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-25" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontStyle=1" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="80" as="sourcePoint" />
+            <mxPoint x="320" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-26" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.mongodb;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="730" y="150" width="25" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-27" value="Text" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="712.5" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-28" value="&lt;font&gt;&lt;span&gt;Web Application Framework&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="86" y="411" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-29" value="&lt;div&gt;Service Role : LabRole&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;EC2 Key Pair : vockey&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;EC2 Instance Profile : LabInstanceRole&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="119" y="321" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-32" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontStyle=1" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="349" as="sourcePoint" />
+            <mxPoint x="440" y="349" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wR3p1nMsVGDt6p0DbT6x-33" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/hawcons/32/699766-icon-12-file-css-128.png" vertex="1" parent="1">
+          <mxGeometry x="375" y="47" width="38" height="38" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
