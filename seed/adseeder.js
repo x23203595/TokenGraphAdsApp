@@ -57,7 +57,7 @@ var ads = [
         imagePath: '/TokenGraphAdsApp/public/images/coffee.jpg',
         title: 'Coffee',
         description: 'Fancy some Coffee?',
-        price: 0.001,
+        price: 0.004,
         order: 8
     },
 ];
