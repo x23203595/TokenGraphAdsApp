@@ -1,3 +1,9 @@
+Setup and Configuration of 'TokenGraphAdsApp'
+
+Microsoft Visual Studio [2022]:
+Initial Setup and Configuration 
+[Installation Path]: https://code.visualstudio.com/docs/?dv=win
+
 GitHub Student Developer Pack:
 Initial Setup and Configuration:
 > git init
@@ -10,8 +16,6 @@ Commit and Push
 > git push -u origin main
 
 MongoDB:
-MongoDB 7.0.8 Engine is respectively used for ‘TokenGraphAdsApp’. A data directory / folder is necessary for storing all data in a compressed JSON-like format. Next, I added my ‘System Environment Variable’ based on the path above so I could launch my MongoDB engine from any directory through Command Prompt. Finally, install the tools of MongoDB shell / MongoDB Compass for a GUI / CLI experience of the API calls through Mongoose, which is additionally installed by the npm commands provided below.
-
 Initial Setup and Configuration
 Paths[Local Machine]:
 1) cd <Drive Name>:\<Folder Name>\<username>\mongodb_data
@@ -36,3 +40,27 @@ npm install --save connect-mongo
 npm i connect-mongo@3
 npm install express-session
 npm install connect-mongo
+
+MetaMask Setup:
+Initial Setup and Configuration
+https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/
+
+Remix – Ethereum IDE
+Initial Setup and Configuration:
+[Path] https://sepolia.etherscan.io/
+https://sepolia.etherscan.io/address/0x60b305da3df35965c97256d13073dd4ef5ac8e41 [Path for the ‘Smart Contract Address’]
+
+Ethereum Sepolia Faucet
+Initial Setup and Configuration:
+I initially grinded through the Ethereum Sepolia Faucet that drips real Ether from the Ethereum Blockchain for facilitating my many transactions in my Web 3.0 App for testing and delivery. However, a test account created in the website alchemy is a necessity for performing the above.
+[Paths]
+https://www.alchemy.com/faucets/ethereum-sepolia
+https://www.alchemy.com/
+
+AWS Elastic Beanstalk
+Details are provided below:
+Application Name: x23203595GraphAdsVinayBean Platform - node.js
+Platform Branch – Node.js 20 on 64bit Amazon Linux 2023 Platform Version – 6.1.2
+Version Label – 0.1
+Existing Service Role – LabRole EC2 Key Pair – vockey
+EC2 Instance Profile - LabInstanceProfile [Path] https://awsacademy.instructure.com/
