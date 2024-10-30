@@ -64,3 +64,5 @@ Platform Branch – Node.js 20 on 64bit Amazon Linux 2023 Platform Version – 6
 Version Label – 0.1
 Existing Service Role – LabRole EC2 Key Pair – vockey
 EC2 Instance Profile - LabInstanceProfile [Path] https://awsacademy.instructure.com/
+
+Youtube Link : https://youtu.be/ZwWZanF_uOo
